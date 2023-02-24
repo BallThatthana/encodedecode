@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <p>This is from me HEYYY</p>
+    <p>This is from dev</p>
   </div>
 </template>
 
