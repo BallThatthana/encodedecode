@@ -2,17 +2,15 @@
   <div> 
     <div>
       <form class="form-group">
-        <textarea v-model="url" rows="6" cols="100" type="text" placeholder="ใส่ลิงก์ที่ช่องนี้"></textarea>
+        <textarea id="url" v-model="url" rows="6" cols="50" class="block p-2.5 w-2/3 sm:w-2/3 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" type="text" placeholder="Url ของคุณ"></textarea>
         <br>
-        <button class="btn" @click.prevent="encodeLink">Encode</button>
-        <button class="btn" @click.prevent="decodeLink">Decode</button>
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mr-2" @click.prevent="encodeLink">Encode</button>
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" @click.prevent="decodeLink">Decode</button>
       </form>
     </div>
-    <p>โดย <a href="https://ballthatthana.com" target="_blank">Ball Thatthana</a> & <a href="https://converrpage.com" target="_blank">ConverrPage Web-Salepage</a></p>
-    <!-- <div id="result">
-      <h2>ลิงก์ที่เเปลงเเล้ว</h2>
-      <textarea v-model="ProcessedUrl" rows="6" cols="100"></textarea>
-    </div> -->
+    <div class="container">
+      <p class="mt-4">โดย <a href="https://ballthatthana.com" target="_blank" class="text-blue-500 font-bold">Ball Thatthana</a> & <a href="https://converrpage.com" target="_blank" class="text-blue-500 font-bold">ConverrPage Web-Salepage</a></p>
+    </div>
   </div>
 </template>
 
@@ -36,19 +34,6 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+<style >
+
 </style>
