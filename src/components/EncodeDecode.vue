@@ -2,15 +2,17 @@
   <div> 
     <div>
       <form class="form-group">
-        <input type="text" v-model="url"/>
-        <button @click.prevent="encodeLink">Encode</button>
-        <button @click.prevent="decodeLink">Decode</button>
+        <textarea v-model="url" rows="6" cols="100" type="text" placeholder="ใส่ลิงก์ที่ช่องนี้"></textarea>
+        <br>
+        <button class="btn" @click.prevent="encodeLink">Encode</button>
+        <button class="btn" @click.prevent="decodeLink">Decode</button>
       </form>
     </div>
-    <div id="result">
+    <p>โดย <a href="https://ballthatthana.com" target="_blank">Ball Thatthana</a> & <a href="https://converrpage.com" target="_blank">ConverrPage Web-Salepage</a></p>
+    <!-- <div id="result">
       <h2>ลิงก์ที่เเปลงเเล้ว</h2>
-      <p id="showURL">{{ ProcessedUrl }}</p>
-    </div>
+      <textarea v-model="ProcessedUrl" rows="6" cols="100"></textarea>
+    </div> -->
   </div>
 </template>
 
@@ -19,16 +21,15 @@ export default {
   name: 'EncodeDecode',
   data(){
     return {
-      input: '',
-      ProcessedUrl: '',
+      url:''
     }
   },
    methods:{
     encodeLink(){
-      this.ProcessedUrl = encodeURIComponent(this.url);
+      this.url = encodeURIComponent(this.url);
     },
     decodeLink(){
-      this.ProcessedUrl = decodeURIComponent(this.url);
+      this.url = decodeURIComponent(this.url);
     }
   }
 }
