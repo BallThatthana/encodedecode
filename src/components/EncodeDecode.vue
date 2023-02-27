@@ -9,8 +9,9 @@
       </form>
     </div>
     <div class="container">
-      <p class="mt-4">โดย <a href="https://ballthatthana.com" target="_blank" class="text-blue-500 font-bold">Ball Thatthana</a> & <a href="https://converrpage.com" target="_blank" class="text-blue-500 font-bold">ConverrPage Web-Salepage</a></p>
-    </div>
+      <p class="mt-4">โดย <a href="https://ballthatthana.com" target="_blank" class="text-blue-500 font-bold">Ball Thatthana</a></p>
+      <p class="mt-4">สนับสนุนโดย <a href="https://converrpage.com" target="_blank" class="text-blue-500 font-bold">ConverrPage Web-Salepage</a></p>
+    </div> 
   </div>
 </template>
 
