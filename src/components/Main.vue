@@ -2,7 +2,7 @@
     <div class="text-center p-6 bg-white shadow-md rounded-lg">
       <h1 class="text-2xl font-bold mb-4">Encode/Decode URL IMAGE Tool</h1>
       <p>Decode URL easily (that weird URL with special characters!) and vice versa.</p>
-      <p>Ypu an encode and decode using UTF-8 or Base64 (Image) format.</p>
+      <p>You can encode and decode using UTF-8 or Base64 (Image) format.</p>
       <EncodeDecode></EncodeDecode>
       <div class="bg-gray-300 mt-4 py-4">
         <p class="font-bold mt-4 p-4 text-left">How To Use</p>
