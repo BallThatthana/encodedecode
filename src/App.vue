@@ -1,17 +1,14 @@
 <template>
-  <Text/>
-  <EncodeDecode/>
+  <Main></Main>
 </template>
 
 <script>
-import Text from './components/Text.vue'
-import EncodeDecode from './components/EncodeDecode.vue'
+import Main from './components/Main.vue';
 
 export default {
   name: 'App',
   components: {
-    Text,
-    EncodeDecode
+    Main
   }
 }
 </script>

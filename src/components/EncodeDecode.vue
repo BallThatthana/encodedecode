@@ -1,16 +1,34 @@
 <template>
-  <div> 
-    <div>
-      <form class="form-group">
-        <textarea id="url" v-model="url" rows="6" cols="50" class="block p-2.5 w-2/3 sm:w-2/3 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" type="text" placeholder="Your URL"></textarea>
-        <br>
-        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mr-2" @click.prevent="encodeLink">Encode</button>
-        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" @click.prevent="decodeLink">Decode</button>
-      </form>
-    </div>
-    <div class="container">
-      <p class="mt-4">By <a href="https://ballthatthana.com" target="_blank" class="text-blue-500 font-bold">Ball Thatthana</a></p>
-      <p class="mt-4">Sponsored by <a href="https://converrpage.com" target="_blank" class="text-blue-500 font-bold">ConverrPage Web-Salepage</a></p>
+  <div class="mt-6 bg-white shadow-md rounded-lg p-6">
+    <form class="space-y-4">
+      <textarea 
+        id="url" 
+        v-model="url" 
+        rows="6" 
+        class="block w-full p-2.5 text-sm text-gray-900 bg-gray-100 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" 
+        placeholder="Your URL"
+      ></textarea>
+      <div class="flex justify-center space-x-2">
+        <select v-model="encodingType" class="bg-gray-100 rounded-lg p-2">
+          <option value="utf8">UTF-8</option>
+          <option value="base64">Base64 (Image)</option>
+        </select>
+        <button 
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" 
+          @click.prevent="encodeLink"
+        >
+          Encode
+        </button>
+        <button 
+          class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full" 
+          @click.prevent="decodeLink"
+        >
+          Decode
+        </button>
+      </div>
+    </form>
+    <div class="mt-6 text-center">
+      <p>By <a href="https://bonthatthana.netlify.app" target="_blank" class="text-blue-500 font-bold">Bon Thatthana</a></p>
     </div> 
   </div>
 </template>
@@ -18,25 +36,39 @@
 <script>
 export default {
   name: 'EncodeDecode',
-  data(){
+  data() {
     return {
-      url:''
+      url: '',
+      encodingType: 'utf8' // default encoding type
     }
   },
-   methods:{
-    encodeLink(){
-      this.url.length === 0?
-      alert('please type in the url first') : this.url = encodeURIComponent(this.url);
+  methods: {
+    encodeLink() {
+      if (this.url.length === 0) {
+        alert('Please type in the URL first');
+      } else {
+        if (this.encodingType === 'utf8') {
+          this.url = encodeURIComponent(this.url);
+        } else if (this.encodingType === 'base64') {
+          this.url = btoa(this.url);
+        }
+      }
     },
-    decodeLink(){
-      this.url.length === 0?
-      alert('please type in the url first') : this.url = decodeURIComponent(this.url);
+    decodeLink() {
+      if (this.url.length === 0) {
+        alert('Please type in the URL first');
+      } else {
+        if (this.encodingType === 'utf8') {
+          this.url = decodeURIComponent(this.url);
+        } else if (this.encodingType === 'base64') {
+          try {
+            this.url = atob(this.url);
+          } catch (e) {
+            alert('Invalid Base64 string');
+          }
+        }
+      }
     }
   }
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style >
-
-</style>
