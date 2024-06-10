@@ -1,10 +1,10 @@
 <template>
     <div class="text-center p-6 bg-white shadow-md rounded-lg">
-      <h1 class="text-2xl font-bold mb-4">Encode/Decode URL IMAGE Tool</h1>
+      <h1 class="text-2xl font-bold mb-4 break-words">Encode/Decode URL IMAGE Tool</h1>
       <p>Decode URL easily (that weird URL with special characters!) and vice versa.</p>
       <p>You can encode and decode using UTF-8 or Base64 (Image) format.</p>
       <EncodeDecode></EncodeDecode>
-      <div class="bg-gray-300 mt-4 py-4">
+      <div class="bg-gray-300 mt-4 py-4 rounded-lg">
         <p class="font-bold mt-4 p-4 text-left">How To Use</p>
         <ul class="list-disc mb-4 ml-6 text-left">
             <li>Paste the copied URL in the search box</li>

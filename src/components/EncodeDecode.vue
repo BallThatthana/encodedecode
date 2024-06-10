@@ -8,19 +8,19 @@
         class="block w-full p-2.5 text-sm text-gray-900 bg-gray-100 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" 
         placeholder="Your URL"
       ></textarea>
-      <div class="flex justify-center space-x-2">
-        <select v-model="encodingType" class="bg-gray-100 rounded-lg p-2">
+      <div class="flex flex-col sm:flex-row justify-center space-x-2">
+        <select v-model="encodingType" class="bg-gray-100 rounded-lg p-2 mb-2">
           <option value="utf8">UTF-8</option>
           <option value="base64">Base64 (Image)</option>
         </select>
         <button 
-          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" 
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 sm:px-4 my-2 rounded-full" 
           @click.prevent="encodeLink"
         >
           Encode
         </button>
         <button 
-          class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full" 
+          class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 sm:px-4 my-2 rounded-full" 
           @click.prevent="decodeLink"
         >
           Decode
